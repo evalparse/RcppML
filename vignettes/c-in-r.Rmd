@@ -1,0 +1,57 @@
+---
+title: "RcppML 包使用说明"
+author: "Xiangyun Huang"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{An Introduction to the RcppML Package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+1. write function in C code
+
+```cpp
+# save vignettes/mini.c
+void useC(int *i){
+  i[0] = 11;
+}
+```
+
+2. compile C code to dll
+
+```bash
+R CMD SHLIB vignettes/mini.c
+```
+```
+C:/Rtools/mingw_64/bin/gcc  -I"C:/PROGRA~1/R/R-36~1.1/include" -DNDEBUG          -O2 -
+Wall  -std=gnu99 -mtune=generic -c vignettes/mini.c -o vignettes/mini.o
+C:/Rtools/mingw_64/bin/gcc -shared -s -static-libgcc -o vignettes/mini.dll tmp.def vig
+nettes/mini.o -LC:/PROGRA~1/R/R-36~1.1/bin/x64 -lR
+```
+
+3. load dll
+
+```r
+dyn.load("vignettes/mini.dll")
+```
+4. use it
+
+```r
+a <- rep(2, 10) # integer vector
+a
+```
+```
+[1] 2 2 2 2 2 2 2 2 2 2
+```
+```r
+out <- .C("useC", b = as.integer(a))
+out$b
+```
+```
+[1] 11  2  2  2  2  2  2  2  2  2
+```

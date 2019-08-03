@@ -2,3 +2,8 @@
 ^\.Rproj\.user$
 ^LICENSE\.md$
 ^\.travis\.yml$
+^docs$
+^README.Rmd$
+^.DS_Store$
+^.Rhistory$
+^extras$

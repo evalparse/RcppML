@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#cd inst/doc && rm -f index.html *.tex *.bbl *.blg *.aux *.out *.log && cd -
+
+rm -f vignettes/*.o vignettes/*.so vignettes/*.a vignettes/*.d vignettes/*.dll vignettes/*.rc
