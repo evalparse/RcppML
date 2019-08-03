@@ -1,0 +1,10 @@
+useDynLib(RcppML, .registration=TRUE)
+exportPattern("^[[:alpha:]]+")
+importFrom(Rcpp, evalCpp)
+importFrom(Rcpp, sourceCpp)
+
+# export R function
+export(hello)
+# export Rcpp function
+export(timesTwo)
+
