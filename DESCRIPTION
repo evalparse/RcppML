@@ -2,6 +2,7 @@ Package: RcppML
 Type: Package
 Title: Machine Learning Algorithms Based on Rcpp
 Version: 0.0.9999
+Depends: R (>= 3.5.0)
 Imports: Rcpp
 LinkingTo: Rcpp
 Author: Xiangyun Huang
@@ -9,7 +10,7 @@ Maintainer: Xiangyun Huang <xiangyunhuang@outlook.com>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
 VignetteBuilder: knitr
-Suggests: knitr, rmarkdown
+Suggests: knitr, rmarkdown, testit
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

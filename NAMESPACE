@@ -7,4 +7,3 @@ importFrom(Rcpp, sourceCpp)
 export(hello)
 # export Rcpp function
 export(timesTwo)
-

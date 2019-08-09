@@ -1,0 +1,57 @@
+---
+title: "吉布斯采样 Rcpp"
+author: "黄湘云"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+![Rcpp for Seamless R and C++ Integration](http://www.rcpp.org/book/seamless.png){ width=45% }
+
+# 吉布斯采样
+
+例子来自 Rcpp 包
+
+```{r}
+list.files(system.file("examples", "RcppGibbs", package = "Rcpp"))
+```
+
+从如下联合概率密度函数抽样
+
+$$
+f(x,y) = x^2\exp(-xy^2 - y^2 + 2y -4x) = x^2 \exp\big[-(y^2+4)x - y^2 + 2y\big]
+$$
+而 $f(x|y) = \frac{f(x,y)}{f(y)} = \frac{f(x,y)}{\int_{-\infty}^{+\infty} f(x,y)dx}$
+
+伽马分布的密度函数
+
+$$
+f(x) = \frac{1}{s^a\Gamma(a)}x^{(a -1)}\exp\big(-\frac{x}{s}\big), x \geq 0, a >0, s > 0
+$$
+其中，$\Gamma(a)$ 函数
+
+$$
+\begin{align}
+f(x|y) &= x^2*\exp\big[-x*(4 + y^2)\big], \\
+f(y|x) &= \exp\big[-0.5*2*(x + 1)*(y^2 - \frac{2*y}{x + 1})\big]
+\end{align}
+$$
+
+分别是伽马密度函数和正态密度函数的形式
+
+# 参考文献
+
+1. [Rcpp Gallery](https://gallery.rcpp.org/)
+
+1. [Rcpp 内置文档](http://dirk.eddelbuettel.com/code/rcpp/html/index.html)
+
