@@ -1,4 +1,3 @@
-#!/bin/sh
+#!/bin/bash
 
-rm -rf vignettes/*.o vignettes/*.so vigenttes/*.a vigenttes/*.d vigenttes/*.dll vigenttes/*.rc
-
+rm -rf vignettes/*.{o,so,a,d,dll,rc}
