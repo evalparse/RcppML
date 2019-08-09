@@ -1,1 +1,1 @@
-[![Travis build status](https://travis-ci.com/XiangyunHuang/RcppML.svg?branch=master)](https://travis-ci.com/XiangyunHuang/RcppML)
+[![Travis build status](https://travis-ci.com/XiangyunHuang/RcppML.svg?branch=master)](https://travis-ci.com/XiangyunHuang/RcppML) [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental) [![CRAN status](https://www.r-pkg.org/badges/version/RcppML)](https://CRAN.R-project.org/package=RcppML)
