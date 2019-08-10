@@ -8,3 +8,4 @@
 ^.Rhistory$
 ^extras$
 ^codecov\.yml$
+^appveyor\.yml$
