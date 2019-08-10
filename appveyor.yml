@@ -51,6 +51,5 @@ artifacts:
   - path: '\*_*.zip'
     name: Bits
 
-artifacts:
   - path: RcppML.zip
     name: RcppML
