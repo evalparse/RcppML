@@ -2,3 +2,7 @@
 
 language: R
 cache: packages
+
+after_success:
+  - Rscript -e 'if(!require(covr)) install.packages("covr")'
+  - Rscript -e 'covr::codecov()'
