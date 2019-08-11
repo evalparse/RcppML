@@ -9,3 +9,4 @@
 ^extras$
 ^codecov\.yml$
 ^appveyor\.yml$
+docker
