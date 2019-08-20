@@ -22,16 +22,14 @@ RUN useradd docker \
 RUN apt-get update \
   && apt-get install -y apt-transport-https ca-certificates \
   && mv /etc/apt/sources.list /etc/apt/sources.list.bak \
-  && echo "
-  deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free
-  # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free
-  deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free
-  # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free
-  deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free
-  # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free
-  deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free
-  # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free
-  " >> /etc/apt/sources.list \
+  && echo "deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free" >> /etc/apt/sources.list \
+  && echo "# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free" >> /etc/apt/sources.list \
+  && echo "deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free" >> /etc/apt/sources.list \
+  && echo "# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free" >> /etc/apt/sources.list \
+  && echo "deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free" >> /etc/apt/sources.list \
+  && echo "# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free" >> /etc/apt/sources.list \
+  && echo "deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free" >> /etc/apt/sources.list \
+  && echo "# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free" >> /etc/apt/sources.list \
   && apt-get update
 
 RUN apt-get install -yq --no-install-recommends \
