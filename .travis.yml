@@ -6,3 +6,14 @@ cache: packages
 after_success:
   - Rscript -e 'if(!require(covr)) install.packages("covr")'
   - Rscript -e 'covr::codecov()'
+  - Rscript -e 'if(!require(pkgdown)) install.packages("pkgdown")'
+  - Rscript -e 'pkgdown::build_site()'
+  - npm install netlify-cli -g
+
+deploy:
+  provider: script
+  script: netlify deploy --prod --dir docs
+  skip_cleanup: true
+  on:
+    branch:
+      - master

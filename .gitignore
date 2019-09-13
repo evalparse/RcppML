@@ -8,3 +8,5 @@ src/*.dll
 vignettes/*.o
 vignettes/*.so
 vignettes/*.dll
+
+docs/
